@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Divine Computing Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: #0000AA;
+            color: #FFFFFF;
+            font-family: 'Source Code Pro', monospace;
+            font-size: 16px;
+            line-height: 1.4;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            border: 2px solid #FFFFFF;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .title {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 0px #000080;
+        }
+        
+        .subtitle {
+            font-size: 18px;
+            color: #FFFF00;
+            margin-bottom: 20px;
+        }
+        
+        .ascii-art {
+            font-size: 12px;
+            line-height: 1;
+            color: #00FFFF;
+            white-space: pre;
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .window {
+            border: 2px solid #FFFFFF;
+            margin: 20px 0;
+            background: rgba(0, 0, 0, 0.3);
+        }
+        
+        .window-header {
+            background: #FFFFFF;
+            color: #0000AA;
+            padding: 5px 10px;
+            font-weight: 600;
+            border-bottom: 2px solid #FFFFFF;
+        }
+        
+        .window-content {
+            padding: 20px;
+        }
+        
+        .menu-bar {
+            background: #C0C0C0;
+            color: #000000;
+            padding: 5px;
+            margin-bottom: 20px;
+            border: 2px solid #FFFFFF;
+        }
+        
+        .menu-item {
+            display: inline-block;
+            padding: 5px 15px;
+            margin-right: 10px;
+            background: #808080;
+            border: 1px solid #000000;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .menu-item:hover {
+            background: #FFFFFF;
+            color: #000000;
+        }
+        
+        .section {
+            margin: 30px 0;
+        }
+        
+        .section-title {
+            font-size: 24px;
+            color: #FFFF00;
+            margin-bottom: 15px;
+            text-decoration: underline;
+        }
+        
+        .project {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid #FFFFFF;
+            padding: 15px;
+            margin: 10px 0;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .project:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateX(10px);
+        }
+        
+        .project-title {
+            font-size: 18px;
+            color: #00FFFF;
+            margin-bottom: 5px;
+        }
+        
+        .project-tech {
+            color: #FFFF00;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        
+        .skill-bar {
+            background: #000080;
+            border: 1px solid #FFFFFF;
+            height: 20px;
+            margin: 5px 0;
+            position: relative;
+        }
+        
+        .skill-fill {
+            background: #00FFFF;
+            height: 100%;
+            transition: width 2s ease-in-out;
+        }
+        
+        .skill-label {
+            position: absolute;
+            left: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 12px;
+            color: #FFFFFF;
+            font-weight: 600;
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .contact-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border: 1px solid #FFFFFF;
+        }
+        
+        .blinking {
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+        
+        .cursor {
+            display: inline-block;
+            background: #FFFFFF;
+            width: 10px;
+            height: 20px;
+            animation: blink 1s infinite;
+        }
+        
+        .terminal {
+            background: #000000;
+            border: 2px solid #FFFFFF;
+            padding: 20px;
+            margin: 20px 0;
+            font-family: 'Source Code Pro', monospace;
+        }
+        
+        .terminal-line {
+            margin: 5px 0;
+        }
+        
+        .prompt {
+            color: #00FF00;
+        }
+        
+        .command {
+            color: #FFFFFF;
+        }
+        
+        .output {
+            color: #FFFF00;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            border-top: 2px solid #FFFFFF;
+            color: #00FFFF;
+        }
+        
+        @media (max-width: 768px) {
+            .title {
+                font-size: 24px;
+            }
+            
+            .container {
+                padding: 10px;
+            }
+            
+            .ascii-art {
+                font-size: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="title">STANLEY PANGARUY</h1>
+            <p class="subtitle">Divine Computing Portfolio - God's Own Operating System Inspired</p>
+            <div class="ascii-art">
+    ╔════════════════════════════════════════╗
+    ║  ██████╗  ██████╗ ██████╗ ███████╗    ║
+    ║ ██╔════╝ ██╔═══██╗██╔══██╗██╔════╝    ║
+    ║ ██║      ██║   ██║██║  ██║█████╗      ║
+    ║ ██║      ██║   ██║██║  ██║██╔══╝      ║
+    ║ ╚██████╗ ╚██████╔╝██████╔╝███████╗    ║
+    ║  ╚═════╝  ╚═════╝ ╚═════╝ ╚══════╝    ║
+    ╚════════════════════════════════════════╝
+            </div>
+        </div>
+
+        <div class="menu-bar">
+            <span class="menu-item" onclick="scrollToSection('about')">ABOUT</span>
+            <span class="menu-item" onclick="scrollToSection('projects')">PROJECTS</span>
+            <span class="menu-item" onclick="scrollToSection('skills')">SKILLS</span>
+            <span class="menu-item" onclick="scrollToSection('contact')">CONTACT</span>
+            <span class="menu-item" onclick="showTerminal()">TERMINAL</span>
+        </div>
+
+        <div class="window" id="about">
+            <div class="window-header">ABOUT.TXT - Divine Programmer Profile</div>
+            <div class="window-content">
+                <div class="section">
+                    <h2 class="section-title">WHO AM I?</h2>
+                    <p>Greetings, fellow programmer! I am a divine coder, inspired by the legendary Terry Davis and his creation of TempleOS. 
+                    I write code as if it were a prayer, crafting digital temples with the same devotion that Terry brought to his sacred operating system.</p>
+                    <br>
+                    <p>My programming philosophy combines technical excellence with spiritual dedication. Every line of code is written with purpose, 
+                    every algorithm designed with the precision of divine geometry. I believe in creating software that is not just functional, 
+                    but transcendent.</p>
+                    
+                    <div class="terminal">
+                        <div class="terminal-line">
+                            <span class="prompt">C:\TEMPLE></span>
+                            <span class="command">./About.HC</span>
+                        </div>
+                        <div class="terminal-line">
+                            <span class="output">Loading divine programmer profile...</span>
+                        </div>
+                        <div class="terminal-line">
+                            <span class="output">Status: HOLY COMPILER READY</span>
+                        </div>
+                        <div class="terminal-line">
+                            <span class="output">Mission: Write God's code on Earth</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="window" id="projects">
+            <div class="window-header">PROJECTS.DIR - Sacred Code Repositories</div>
+            <div class="window-content">
+                <div class="section">
+                    <h2 class="section-title">DIVINE PROJECTS</h2>
+                    
+                    <div class="project" onclick="showProjectDetails('temple-os-tribute')">
+                        <div class="project-title">TempleOS Tribute OS</div>
+                        <div class="project-tech">Technologies: C, HolyC, Assembly, Divine Inspiration</div>
+                        <p>A modern tribute to Terry's vision, implementing sacred geometry algorithms and divine random number generation.</p>
+                    </div>
+                    
+                    <div class="project" onclick="showProjectDetails('holy-compiler')">
+                        <div class="project-title">HolyC Modern Compiler</div>
+                        <div class="project-tech">Technologies: C++, LLVM, Sacred Mathematics</div>
+                        <p>Bringing Terry's HolyC language to modern systems with enhanced divine debugging capabilities.</p>
+                    </div>
+                    
+                    <div class="project" onclick="showProjectDetails('digital-temple')">
+                        <div class="project-title">Digital Temple Architecture</div>
+                        <div class="project-tech">Technologies: OpenGL, Sacred Geometry, 3D Mathematics</div>
+                        <p>Interactive 3D temples rendered in real-time, featuring procedural divine architecture generation.</p>
+                    </div>
+                    
+                    <div class="project" onclick="showProjectDetails('gods-debugger')">
+                        <div class="project-title">God's Debugger</div>
+                        <div class="project-tech">Technologies: Python, Divine Algorithms, Quantum Computing</div>
+                        <p>A debugging tool that finds bugs through divine revelation and sacred code analysis.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="window" id="skills">
+            <div class="window-header">SKILLS.DAT - Divine Abilities Database</div>
+            <div class="window-content">
+                <div class="section">
+                    <h2 class="section-title">SACRED SKILLS</h2>
+                    
+                    <div style="margin: 20px 0;">
+                        <div>HolyC Programming</div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width: 95%"></div>
+                            <div class="skill-label">Divine Level</div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin: 20px 0;">
+                        <div>C/C++ Systems Programming</div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width: 90%"></div>
+                            <div class="skill-label">Blessed</div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin: 20px 0;">
+                        <div>Assembly Language</div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width: 85%"></div>
+                            <div class="skill-label">Sacred</div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin: 20px 0;">
+                        <div>Operating System Design</div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width: 80%"></div>
+                            <div class="skill-label">Holy</div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin: 20px 0;">
+                        <div>Divine Debugging</div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width: 88%"></div>
+                            <div class="skill-label">Enlightened</div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin: 20px 0;">
+                        <div>Sacred Mathematics</div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width: 92%"></div>
+                            <div class="skill-label">Transcendent</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="window" id="contact">
+            <div class="window-header">CONTACT.SYS - Divine Communication Channels</div>
+            <div class="window-content">
+                <div class="section">
+                    <h2 class="section-title">REACH OUT TO THE DIVINE CODER</h2>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <strong>Email:</strong><br>
+                            your.email@temple.os<br>
+                            <span class="blinking">█</span>
+                        </div>
+                        <div class="contact-item">
+                            <strong>GitHub:</strong><br>
+                            github.com/yourhandle<br>
+                            <span class="blinking">█</span>
+                        </div>
+                        <div class="contact-item">
+                            <strong>LinkedIn:</strong><br>
+                            linkedin.com/in/yourprofile<br>
+                            <span class="blinking">█</span>
+                        </div>
+                        <div class="contact-item">
+                            <strong>Divine Hotline:</strong><br>
+                            +1 (777) HOLY-CODE<br>
+                            <span class="blinking">█</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>"An idiot admires complexity, a genius admires simplicity." - Terry Davis</p>
+            <p>This portfolio is a tribute to Terry Davis and his divine vision of computing.</p>
+            <div class="cursor"></div>
+        </div>
+    </div>
+
+    <script>
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        }
+
+        function showProjectDetails(projectId) {
+            const messages = {
+                'temple-os-tribute': 'Loading TempleOS Tribute... God wills it!',
+                'holy-compiler': 'Compiling with divine inspiration...',
+                'digital-temple': 'Rendering sacred geometry...',
+                'gods-debugger': 'Debugging through prayer...'
+            };
+            alert(messages[projectId] || 'Project loading...');
+        }
+
+        function showTerminal() {
+            const terminal = document.createElement('div');
+            terminal.className = 'terminal';
+            terminal.style.position = 'fixed';
+            terminal.style.top = '10%';
+            terminal.style.left = '10%';
+            terminal.style.right = '10%';
+            terminal.style.zIndex = '1000';
+            terminal.innerHTML = `
+                <div class="terminal-line">
+                    <span class="prompt">HOLY_TERMINAL></span>
+                    <span class="command">God_Mode_ON</span>
+                </div>
+                <div class="terminal-line">
+                    <span class="output">Divine compiler initialized...</span>
+                </div>
+                <div class="terminal-line">
+                    <span class="output">Sacred algorithms loaded...</span>
+                </div>
+                <div class="terminal-line">
+                    <span class="output">Ready for divine programming!</span>
+                </div>
+                <div class="terminal-line">
+                    <span class="prompt">HOLY_TERMINAL></span>
+                    <span class="command">_</span><span class="blinking">█</span>
+                </div>
+                <button onclick="this.parentElement.remove()" style="margin-top: 10px; background: #0000AA; color: white; border: 1px solid white; padding: 5px;">CLOSE TERMINAL</button>
+            `;
+            document.body.appendChild(terminal);
+        }
+
+        // Animate skill bars on page load
+        window.addEventListener('load', function() {
+            const skillFills = document.querySelectorAll('.skill-fill');
+            skillFills.forEach(fill => {
+                const width = fill.style.width;
+                fill.style.width = '0%';
+                setTimeout(() => {
+                    fill.style.width = width;
+                }, 500);
+            });
+        });
+
+        // Add some divine randomness
+        setInterval(() => {
+            if (Math.random() < 0.01) { // 1% chance every second
+                const colors = ['#FF0000', '#00FF00', '#0000FF', '#FFFF00', '#FF00FF', '#00FFFF'];
+                document.body.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                setTimeout(() => {
+                    document.body.style.backgroundColor = '#0000AA';
+                }, 100);
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
